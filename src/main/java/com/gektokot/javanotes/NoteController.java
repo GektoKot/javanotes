@@ -27,12 +27,6 @@ public class NoteController {
     public static final String NOTES_REPO = "src/main/resources/com/gektokot/javanotes/repo/";
 
     @FXML
-    void onEditButtonAction() throws IOException {
-        Files.deleteIfExists(Paths.get(NOTES_REPO + labelId.getText()));
-        textArea.setEditable(true);
-    }
-
-    @FXML
     void onDeleteButtonAction() throws IOException {
         Files.deleteIfExists(Paths.get(NOTES_REPO + labelId.getText()));
         Stage stage = (Stage) deleteButton.getScene().getWindow();
@@ -49,7 +43,6 @@ public class NoteController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        textArea.setEditable(false);
     }
 
     public void setTextArea(String note) {
