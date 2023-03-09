@@ -16,20 +16,20 @@ public class Note extends Stage{
         Scene scene = new Scene(loader.load(), 200, 100);
         NoteController controller = loader.getController();
         controller.setId(noteId);
-        this.setTitle("Note");
-        this.setResizable(false);
-        this.setOnCloseRequest(event -> event.consume());
-        this.setScene(scene);
-        this.show();
+        setStage(scene);
     }
 
-    public Note(String note, String id) throws IOException {
+    public Note(String note, String noteId) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("note.fxml"));
         Scene scene = new Scene(loader.load(), 200, 100);
         NoteController controller = loader.getController();
-        controller.setId(id);
+        controller.setId(noteId);
         controller.setTextArea(note);
+        setStage(scene);
+    }
+
+    private void setStage(Scene scene) {
         this.setTitle("Note");
         this.setResizable(false);
         this.setOnCloseRequest(event -> event.consume());

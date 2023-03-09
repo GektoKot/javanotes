@@ -26,7 +26,6 @@ public class MainController {
             for (int i = 0; i < notesPaths.size(); i++) {
                 String noteText = Files.readString(notesPaths.get(i));
                 Note note = new Note(noteText, notesPaths.get(i).getFileName().toString());
-                System.out.println(notesPaths.get(i).getFileName().toString());
                 int x = 50;
                 int y = 50;
                 note.setX(x * i);

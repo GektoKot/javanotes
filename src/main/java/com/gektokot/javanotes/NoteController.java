@@ -42,7 +42,7 @@ public class NoteController {
     @FXML
     void onSaveButtonAction() {
 
-        File file = new File(NOTES_REPO + labelId.getText() + ".txt");
+        File file = new File(NOTES_REPO + labelId.getText());
         try (FileWriter writer = new FileWriter(file, false)) {
             writer.write(textArea.getText());
             writer.flush();
