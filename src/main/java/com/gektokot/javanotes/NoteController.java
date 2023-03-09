@@ -28,13 +28,13 @@ public class NoteController {
 
     @FXML
     void onEditButtonAction() throws IOException {
-        Files.deleteIfExists(Paths.get(NOTES_REPO + labelId.getText() + ".txt"));
+        Files.deleteIfExists(Paths.get(NOTES_REPO + labelId.getText()));
         textArea.setEditable(true);
     }
 
     @FXML
     void onDeleteButtonAction() throws IOException {
-        Files.deleteIfExists(Paths.get(NOTES_REPO + labelId.getText() + ".txt"));
+        Files.deleteIfExists(Paths.get(NOTES_REPO + labelId.getText()));
         Stage stage = (Stage) deleteButton.getScene().getWindow();
         stage.close();
     }

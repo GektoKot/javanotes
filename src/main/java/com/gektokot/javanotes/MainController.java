@@ -18,12 +18,15 @@ public class MainController {
 
     @FXML
     void initialize() throws IOException {
-        new Note();
         try (Stream<Path> files = Files.list(Paths.get("src/main/resources/com/gektokot/javanotes/repo"))) {
             List<Path> notesPaths = files.toList();
+            if (notesPaths.size() == 0) {
+                new Note();
+            }
             for (int i = 0; i < notesPaths.size(); i++) {
                 String noteText = Files.readString(notesPaths.get(i));
-                Note note = new Note(noteText);
+                Note note = new Note(noteText, notesPaths.get(i).getFileName().toString());
+                System.out.println(notesPaths.get(i).getFileName().toString());
                 int x = 50;
                 int y = 50;
                 note.setX(x * i);

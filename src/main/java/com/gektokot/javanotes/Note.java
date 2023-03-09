@@ -9,10 +9,8 @@ import java.util.UUID;
 
 public class Note extends Stage{
 
-    private final String noteId;
-
     public Note() throws IOException {
-        noteId = UUID.randomUUID().toString();
+        String noteId = UUID.randomUUID().toString();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("note.fxml"));
         Scene scene = new Scene(loader.load(), 200, 100);
@@ -25,13 +23,12 @@ public class Note extends Stage{
         this.show();
     }
 
-    public Note(String note) throws IOException {
-        noteId = UUID.randomUUID().toString();
+    public Note(String note, String id) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("note.fxml"));
         Scene scene = new Scene(loader.load(), 200, 100);
         NoteController controller = loader.getController();
-        controller.setId(noteId);
+        controller.setId(id);
         controller.setTextArea(note);
         this.setTitle("Note");
         this.setResizable(false);
