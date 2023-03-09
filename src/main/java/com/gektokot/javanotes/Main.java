@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -15,6 +16,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         int appWidth = 200;
         int appHeight = 100;
+        new File("src/main/resources/com/gektokot/javanotes/repo").mkdirs();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), appWidth, appHeight);
         stage.setTitle("Notes");
