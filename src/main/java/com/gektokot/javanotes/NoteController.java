@@ -22,13 +22,13 @@ public class NoteController {
     private TextArea textArea;
 
     @FXML
-    private Label labelId;
+    private Label noteId;
 
     public static final String NOTES_REPO = "src/main/resources/com/gektokot/javanotes/repo/";
 
     @FXML
     void onDeleteButtonAction() throws IOException {
-        Files.deleteIfExists(Paths.get(NOTES_REPO + labelId.getText()));
+        Files.deleteIfExists(Paths.get(NOTES_REPO + noteId.getText()));
         Stage stage = (Stage) deleteButton.getScene().getWindow();
         stage.close();
     }
@@ -36,7 +36,7 @@ public class NoteController {
     @FXML
     void onSaveButtonAction() {
 
-        File file = new File(NOTES_REPO + labelId.getText());
+        File file = new File(NOTES_REPO + noteId.getText());
         try (FileWriter writer = new FileWriter(file, false)) {
             writer.write(textArea.getText());
             writer.flush();
@@ -50,7 +50,7 @@ public class NoteController {
     }
 
     public void setId(String noteId) {
-        labelId.setText(noteId);
+        this.noteId.setText(noteId);
     }
 
     @FXML

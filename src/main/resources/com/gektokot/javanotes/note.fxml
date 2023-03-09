@@ -10,6 +10,6 @@
       <TextArea fx:id="textArea" prefHeight="54.0" prefWidth="200.0" text="Now, note something" />
       <Button fx:id="saveButton" layoutX="145.0" layoutY="61.0" mnemonicParsing="false" onAction="#onSaveButtonAction" text="Save" />
       <Button fx:id="deleteButton" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#onDeleteButtonAction" text="Delete" />
-      <Label fx:id="labelId" layoutX="14.0" layoutY="98.0" prefHeight="17.0" prefWidth="171.0" text="Label" />
+      <Label fx:id="noteId" layoutX="14.0" layoutY="98.0" prefHeight="17.0" prefWidth="171.0" text="id" />
    </children>
 </AnchorPane>
